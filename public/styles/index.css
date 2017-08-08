@@ -34,6 +34,7 @@
 	.products_container{
 		grid-template-columns: repeat(1, 1fr);
 		min-width: 250px; 
-		float: none;	
+		float: none;
+		background: black;	
 	}
 }
