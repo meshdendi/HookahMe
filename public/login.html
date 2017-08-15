@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body ng-app="login" ng-controller="ctrl">
+		<table>
+			<tr>
+				<td>
+					<label>Username: </label>
+				</td>
+				<td>
+					<input type="text" name="username" ng-model="username" >
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>Password: </label>
+				</td>
+				<td>
+					<input type="password" name="password" ng-model="password">
+				</td>
+			</tr>
+
+			<tr>
+				<td><input type="text" name="name"></td>
+				<td colspan="2"><button ng-click="goAbout();">About</button></td>
+			</form>
+			</tr>
+		</table>
+
+		<a href='/about'>s</a>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="./controllers/loginController.js"></script>
+</body>
+</html>
