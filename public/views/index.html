@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <form action="/register" method="post">
+      <table>
+        <tr>
+          <td>
+            <label>username: </label>
+          </td>
+          <td>
+            <input class="form-control" type="text" name="username" id="username" placeholder="username" required />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>password: </label>
+          </td>
+          <td>
+            <input class="form-control" type="password" name="password" id="password" placeholder="password" required />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" class="btn btn-primary btn-lg" value="register" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
