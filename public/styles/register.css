@@ -8,23 +8,25 @@ body{
   background-color: white;
   display: block;
   position: relative;
-  min-width: 400px;
-  padding: 1em;
+  padding: 1.5em;
   width: 40%;
   margin: auto;
+  vertical-align: middle;
+  top:100px;
+}
+
+.error-msgs{
+  padding:0;
+  margin: 0;
 }
 
 #registration-form{
   width: 100%;
   margin:auto;
-  vertical-align: middle;
 }
 
-#registration-form td{
-
-}
 
 .cridentials{
-  width: 100%;
   margin-bottom: 10px;
+  width: fill;
 }

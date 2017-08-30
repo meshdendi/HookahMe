@@ -9,26 +9,17 @@
 
   <body>
 
-    <div id="fb-root"></div>
-
-
-
-
+    </div>
     <form action="/register" method="post">
       <div id="reg-form">
-        <h2 style="padding-left:1em; ">Login</h2>
+        <h2 >Login In Into Your Account</h2>
         <hr />
         <table id="registration-form">
-          <tr>
-            <td>
-              <div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large"
-               data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-            </td>
-          </tr>
+
           <tr>
             <td colspan="2">
               <label class="user-label">username</label>
-              <input class="form-control cridentials" type="text" name="username" id="username" minlength="6" placeholder="username" required />
+              <input class="form-control cridentials" type="text" name="username" id="username"  placeholder="username" required />
             </td>
           </tr>
           <tr>
@@ -38,15 +29,20 @@
             </td>
           </tr>
           <tr>
-            <td>
-              <input type="submit" class="btn btn-primary btn-lg" value="register" />
+            <td style="width: 50%">
+              <input type="submit" class="btn btn-primary btn-lg" value="Login" style="width:100%; margin-right: 20px;"/>
+            </td>
+            <td style="width: 50%">
+
+              <fb:login-button class="fb_button" length="long" size="large" scope="public_profile,email" onlogin="checkLoginState();">
+                  <span style= "margin-right: 10px;">Se connecter avec Facebook</span>
+              </fb:login-button>
+
             </td>
           </tr>
         </table>
       </div>
     </form>
-
-
 
 
     <script>
