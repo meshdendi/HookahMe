@@ -1,11 +1,86 @@
 doctype html
 html
   head
-    title welcome user
-  
+    meta(charset='utf-8')
+    title Register
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/register.css')
   body
-    h1 Welcome user!
-    ul
-      each product, i in products
-        li= product.price
-        
+
+    form(action='/register', method='post')
+      #reg-form
+        h2 Login In Into Your Account
+        hr
+        if errors
+          ul(style='color:red; padding-left: 0')
+            for error in errors
+              li= error.msg
+        table#registration-form
+          tr
+            td(colspan='2')
+              label.user-label username
+              input#username.form-control.cridentials(type='text', name='username', placeholder='username', required='')
+          tr
+            td(colspan='2')
+              label.user-label password
+              input#password.form-control.cridentials(type='password', name='password', minlength='6', placeholder='password', required='')
+          tr
+            td(style='width: 50%')
+              input.btn.btn-primary.btn-lg(type='submit', value='Login', style='width:100%; margin-right: 20px;')
+            //- td(style='width: 50%')
+            //-   fb:login-button.fb_button(length='long', size='large', scope='public_profile,email', onlogin='checkLoginState();')
+            //-     span(style='margin-right: 10px;') Se connecter avec Facebook
+    
+    
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '121349778515503',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+      });
+      FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+      });
+      };
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      function statusChangeCallback(response){
+      if(response.status === 'connected'){
+      console.log('Logged in and authenticated');
+      testAPI();
+      }else{
+      console.log('Not authenticated');
+      }
+      }
+      function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+      });
+      }
+      function testAPI(){
+      FB.api('/me?field=name,user_birthday', function(response){
+      if(response && !response.error){
+      console.log(response);
+      }
+      });
+      }
+      function logout(){
+      FB.logout(function(response){
+      console.log(response);
+      });
+      }
+    script.
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=121349778515503";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
