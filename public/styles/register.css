@@ -11,9 +11,13 @@ body{
   width: 40%;
   margin: auto;
   vertical-align: middle;
+<<<<<<< HEAD
   height: 60%;
   top: 50%;
   transform: translateY(50%);
+=======
+  top:100px;
+>>>>>>> 9a3e6c9eb2f0b6923bfe68414139af32f3383245
 }
 
 .error-msgs{
@@ -30,6 +34,7 @@ body{
 .cridentials{
   margin-bottom: 10px;
   width: fill;
+<<<<<<< HEAD
 }
 
 .log_menu1{
@@ -95,4 +100,6 @@ body{
 /* iPhone6 plus */
 @media screen and (max-device-width: 414px) and (max-device-height: 776px) {
 
+=======
+>>>>>>> 9a3e6c9eb2f0b6923bfe68414139af32f3383245
 }

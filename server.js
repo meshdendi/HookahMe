@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var mongo = require('mongojs');
 var db = mongo('HookahMe', ['argile']);
+<<<<<<< HEAD
 var session = require('express-session');
 var expressValidator = require('express-validator');
 var favicon = require('serve-favicon');
@@ -13,10 +14,30 @@ var favicon = require('serve-favicon');
 // 	resave: false,
 // 	saveUninitialized: true
 // }
+=======
+var register = require('./functions/register');
+var session = require('express-session');
+var expressValidator = require('express-validator');
+>>>>>>> 9a3e6c9eb2f0b6923bfe68414139af32f3383245
 
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'pug');
 
+<<<<<<< HEAD
+=======
+// mongoose.connect('mongodb://localhost/HookahMe');
+// var db = mongoose.connection;
+
+// db.once('open', function(){
+// 	console.log('connected to mongoDB');
+// });
+// db.on('error',function(err){
+// 	console.log('Could not connect to mongoDB');
+// });
+
+// var argile = require('./models/argile');
+// app.use(express.static(__dirname + '/public/views'));
+>>>>>>> 9a3e6c9eb2f0b6923bfe68414139af32f3383245
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(__dirname + '/www')); // redirect root
@@ -26,6 +47,7 @@ app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redi
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 app.use('/css', express.static(__dirname + '/public/styles'));
 app.use(expressValidator());
+<<<<<<< HEAD
 app.use(favicon(path.join(__dirname + '/public/Images/favicon.png')));
 app.use(function(req, res, next){
 	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
@@ -79,6 +101,27 @@ app.post('/home', function(req, res){
 
 
 
+=======
+// app.use(session({secret: 'kksdf7a7sdf67ds0f7', resave:false, saveUninitialized: true, cookie: {secure: true}}));
+
+var sess = {
+  secret: 'keyboard cat',
+	resave: false,
+	saveUninitialized: true,
+  cookie: {}
+}
+
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+
+app.use(session(sess));
+
+app.get('/', function(req, res){
+	res.render(__dirname + '/public/views/index');
+});
+>>>>>>> 9a3e6c9eb2f0b6923bfe68414139af32f3383245
 app.post('/register', function(req, res){
 	var username = req.body.username;
 	var password = req.body.password;
@@ -90,6 +133,7 @@ app.post('/register', function(req, res){
 			errors = result.array();
 			res.render('index', {errors: errors});
 		}else{
+<<<<<<< HEAD
 			db.users.findOne({username: username}, function(err, docs){
 				if(docs){
 					errors = [];
@@ -99,6 +143,14 @@ app.post('/register', function(req, res){
 					db.users.insert({username: username, password: password}, function(err, result){
 						//res.render('home');
           });
+=======
+			db.users.findOne({username: username, password: password}, function(err, docs){
+				if(docs){
+					console.log('user already exiss');
+					res.status('404').send('welcome 404');
+				}else{
+					console.log('registered');
+>>>>>>> 9a3e6c9eb2f0b6923bfe68414139af32f3383245
 				}
 			});
 		}
@@ -107,12 +159,15 @@ app.post('/register', function(req, res){
 
 app.get('/about', function(req, res){
 	res.sendFile(__dirname + '/public/views/about.html');
+<<<<<<< HEAD
 });
 
 app.get('/users/:username', function(req, res){
 	if(req.params.username === 'abed'){
 		console.log(req.params.username);
 	}
+=======
+>>>>>>> 9a3e6c9eb2f0b6923bfe68414139af32f3383245
 });
 
 app.listen(3000, function(){
