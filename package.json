@@ -17,6 +17,7 @@
     "jquery": "^3.2.1",
     "mongojs": "^2.4.1",
     "mongoose": "^4.11.7",
-    "pug": "^2.0.0-rc.3"
+    "pug": "^2.0.0-rc.3",
+    "serve-favicon": "^2.4.3"
   }
 }

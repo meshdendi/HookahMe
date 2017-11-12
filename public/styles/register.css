@@ -6,13 +6,14 @@ body{
 
 #reg-form{
   background-color: white;
-  display: block;
   position: relative;
   padding: 1.5em;
   width: 40%;
   margin: auto;
   vertical-align: middle;
-  top:100px;
+  height: 60%;
+  top: 50%;
+  transform: translateY(50%);
 }
 
 .error-msgs{
@@ -29,4 +30,69 @@ body{
 .cridentials{
   margin-bottom: 10px;
   width: fill;
+}
+
+.log_menu1{
+  background-color: #0099CC;
+  width: 50%;
+  font-size: 1.5em;
+  border-right: 1px #ababab solid;
+  height: 40px;
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.log_menu2{
+  background-color: #0099CC;
+  width: 50%;
+  font-size: 1.5em;
+  height: 40px;
+  padding-left: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.log_menu1:hover{
+  background-color: blue;
+}
+
+.log_menu2:hover{
+  background-color: blue;
+}
+
+.log_menu1:visited{
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+}
+
+.log_menu2:visited{
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+}
+
+.menu{
+  width:100%;
+  color:white;
+}
+
+.acb{
+  color:white;
+  text-decoration: none;
+}
+
+.acb:hover{
+  text-decoration: none;
+  color:white;
+}
+
+/* iPhone6 */
+@media screen and (max-device-width: 375px) and (max-device-height: 667px) {
+
+}
+
+/* iPhone6 plus */
+@media screen and (max-device-width: 414px) and (max-device-height: 776px) {
+
 }
